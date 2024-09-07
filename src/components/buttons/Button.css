@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button-base {
+    @apply font-sans font-semibold text-sm tracking-wider py-1 px-4 min-w-[60px] outline outline-white rounded cursor-pointer transition-all ease-in-out duration-300;
+}
+
+.button-a {
+    @apply bg-transparent text-white;
+}
+
+.button-b {
+    @apply bg-transparent text-black;
+}
+
+.button-c {
+    @apply bg-accent-color-a text-white;
+}
+
+.button-a:hover {
+    @apply bg-white bg-opacity-10;
+}
+
+.button-b:hover {
+    @apply bg-black bg-opacity-10;
+}
+
+.button-c:hover {
+    @apply bg-accent-color-a-dark;
+}
