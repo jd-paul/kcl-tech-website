@@ -7,15 +7,15 @@
 }
 
 .button-a {
-    @apply bg-transparent text-white;
+    @apply bg-transparent text-white border border-white;
 }
 
 .button-b {
-    @apply bg-transparent text-black;
+    @apply bg-transparent text-black border border-transparent;
 }
 
 .button-c {
-    @apply bg-accent-color-a text-white;
+    @apply bg-accent-color-a text-white border-none;
 }
 
 .button-a:hover {
@@ -27,5 +27,5 @@
 }
 
 .button-c:hover {
-    @apply bg-accent-color-a-dark;
+    @apply bg-accent-color-a/80;
 }
