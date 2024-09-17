@@ -11,6 +11,12 @@ import StaffPaul from "../../images/committee/Paul San Diego - Website Manager a
 import StaffMin from "../../images/committee/Minseok Ryu - Head of Events.jpg";
 import StaffAgrima from "../../images/committee/Agrima Khare - Programming Lead.jpg";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+
+
 
 function Landing() {
     return (
@@ -18,7 +24,7 @@ function Landing() {
             <div className="slides-generic"
                 style={{ backgroundColor: '#202020', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '6rem', margin: 0 }}>
                 <div className="content-generic">
-                    <div style={{ display: 'flex', justifyContent: 'left', width: '100%' }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                         <h1>We create. <span className="fancy" style={{}}>We are King's Technology Society.</span></h1>
                     </div>
 
@@ -149,114 +155,68 @@ function Landing() {
                 </svg>
             </div>
 
-            {/*  */}
-            <div className="parallax">
-                <div className="overlay" style={{ backgroundColor: 'rgba(0, 0, 0, 0.60)' }}></div>
+            <div className="parallax" style={{ backgroundImage: `url(${ImageMain})`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="overlay" style={{ backgroundColor: 'rgba(0, 0, 0, 0.75)' }}></div>
 
+                {/* <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gridGap: '1rem', width: '100%', marginTop: '1rem' }}> */}
                 <div className="content-generic" style={{ position: 'relative', zIndex: 2, padding: '8rem 0' }}>
+
+                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                        <a><h1 className="font-exo text-5xl m-4 text-white font-bold">About Us</h1></a>
+                    </div>
+
                     <div className="responsive-grid" style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(3, 1fr)', /* 3 columns */
-                        gridTemplateRows: 'repeat(2, 1fr)', /* 2 rows */
-                        gridColumnGap: '1rem', /* Gap between columns */
-                        gridRowGap: '1rem', /* Gap between rows */
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', /* Automatically adjust number of columns */
+                        gridGap: '1rem', /* Gap between cells */
                         width: '100%'
                     }}>
 
-                        <div
-                            style={{ gridColumn: '1 / 2', gridRow: '1 / 2', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
+                        {/* Card 1 */}
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
                             <div className="card-info">
                                 <div className="card-content">
-                                    <div style={{ textAlign: 'center' }}>
-                                        <img style={{ width: '30%', filter: 'invert(100%)' }} src="./images/who.png" />
+                                    <div style={{ textAlign: 'center' }} className="mb-2">
+                                        <FontAwesomeIcon icon={faGlobe} style={{ fontSize: '3rem' }} />
                                     </div>
-
                                     <h2>Who are we?</h2>
                                     <hr />
-                                    <p>We are students from King's College London, coming from a range of backgrounds, passionate about all
-                                        areas of technology from AI to IoT.</p>
+                                    <p>We are students from King's College London, coming from a range of backgrounds, passionate about all areas of technology from AI to IoT.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div
-                            style={{ gridColumn: '2 / 3', gridRow: '1 / 2', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
+                        {/* Card 2 */}
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
                             <div className="card-info">
                                 <div className="card-content">
-                                    <div style={{ textAlign: 'center' }}>
-                                        <img style={{ width: '30%', filter: 'invert(100%)' }} src="./images/what.png" />
+                                    <div style={{ textAlign: 'center' }} className="mb-2">
+                                        <FontAwesomeIcon icon={faCircleQuestion} style={{ fontSize: '3rem' }} />
                                     </div>
-
                                     <h2>What do we do?</h2>
                                     <hr />
-                                    <p>We connect students and industry, organise events and workshops to develop skills and expertise
-                                        relevant to current tech trends.</p>
+                                    <p>We connect students and industry, organise events and workshops to develop skills and expertise relevant to current tech trends.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div
-                            style={{ gridColumn: '3 / 4', gridRow: '1 / 2', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
+                        {/* Card 3 */}
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
                             <div className="card-info">
                                 <div className="card-content">
-                                    <div style={{ textAlign: 'center' }}>
-                                        <img style={{ width: '27%', filter: 'invert(100%)' }} src="./images/join.png" />
+                                    <div style={{ textAlign: 'center' }} className="mb-2">
+                                        <FontAwesomeIcon icon={faRightToBracket} style={{ fontSize: '3rem' }} />
                                     </div>
-
                                     <h2>How can I join?</h2>
                                     <hr />
-                                    <p>Any KCL Student can become a member for free <a style={{ color: 'white' }}
-                                        href="https://www.kclsu.org/groups/activities/join/22559/" target="_blank"><u><b>here</b></u></a>.
-                                        Stay Connected by
-                                        following our Social Media and signing up to our <a style={{ color: 'white' }} href="http://eepurl.com/hLS0ZT"
-                                            target="_blank"><u><b>newsletter</b></u></a>.</p>
+                                    <p>Any KCL Student can become a member for free <a style={{ color: 'white' }} href="https://www.kclsu.org/groups/activities/join/22559/" target="_blank"><u><b>here</b></u></a>. Stay Connected by following our Social Media and signing up to our <a style={{ color: 'white' }} href="http://eepurl.com/hLS0ZT" target="_blank"><u><b>newsletter</b></u></a>.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div
-                            style={{ gridColumn: '1 / 2', gridRow: '2 / 3', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
-                            <div className="card-info">
-                                <div className="card-content">
-                                    <div style={{ textAlign: 'center' }}>
-                                        <img style={{ width: '30%', filter: 'invert(100%)' }} src="./images/who.png" />
-                                    </div>
-
-                                    <h2 style={{ color: 'white' }}>40%</h2>
-                                    <h2 style={{ color: 'white' }}>Female</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            style={{ gridColumn: '2 / 3', gridRow: '2 / 3', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
-                            <div className="card-info">
-                                <div className="card-content">
-                                    <div style={{ textAlign: 'center' }}>
-                                        <img style={{ width: '30%', filter: 'invert(100%)' }} src="./images/what.png" />
-                                    </div>
-
-                                    <h2 style={{ color: 'white' }}>4000+</h2>
-                                    <h2 style={{ color: 'white' }}>Engagement Reach</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            style={{ gridColumn: '3 / 4', gridRow: '2 / 3', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
-                            <div className="card-info">
-                                <div className="card-content">
-                                    <div style={{ textAlign: 'center' }}>
-                                        <img style={{ width: '27%', filter: 'invert(100%)' }} src="./images/join.png" />
-                                    </div>
-
-                                    <h2 style={{ color: 'white' }}>40%</h2>
-                                    <h2 style={{ color: 'white' }}>Non-Informatics Students</h2>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
+
 
                 <div className="custom-shape-divider-bottom-1722578256" style={{ zIndex: 2, padding: 0 }}>
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

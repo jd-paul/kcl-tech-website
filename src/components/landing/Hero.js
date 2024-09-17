@@ -88,22 +88,21 @@ const Hero = () => {
 
       <div className="relative z-10 flex flex-col h-full">
         <div className="absolute left-[1.5rem] top-[20%] md:left-[15%] md:pr-[15%] md:top-[25%] text-left">
-          <h1 className="text-4xl md:text-5xl font-share-tech font-bold text-main-color bg-white bg-opacity-80 p-2 mb-1">
+          <h1 className="text-5xl font-share-tech font-bold text-main-color bg-white bg-opacity-80 p-2 mb-1">
             Welcome to KCL Tech
           </h1>
-          <h2 className="text-md md:text-xl text-white">King's College London's Technology Society</h2>
-          <ButtonFancy
+          <h2 className="text-xl text-white mb-2">King's College London's Technology Society</h2>
+          <Button
             label="Become a Member"
             onClick={() => window.open('https://www.kclsu.org/groups/activities/join/22559/', '_blank')}
             backgroundColor="#34D4D4"
-            style={{ marginTop: '0.5rem' }}
+            type="white"
           />
         </div>
 
-        {/* <div className="absolute -[1.5rem] top-[20%] md:left-[15%] md:pr-[15%] md:top-[25%] text-left"> */}
         <div className="absolute right-[1.5rem] bottom-[20%] md:right-[15%] md:pl-[15%] md:bottom-[25%] text-right">
-          <h1 id="eventTitle" className="event-title text-white text-2xl md:text-3xl font-bold"></h1>
-          <h2 id="eventDescription" className="event-description text-white text-md md:text-xl mt-2 mb-[0.5rem]"></h2>
+          <h1 id="eventTitle" className="event-title text-white text-3xl font-bold"></h1>
+          <h2 id="eventDescription" className="event-description text-white text-xl mt-2 mb-[0.5rem]"></h2>
 
           <Button
             id="learnMoreBtn"
