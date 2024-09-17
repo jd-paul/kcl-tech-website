@@ -1,14 +1,12 @@
 import { Nav } from 'react-bootstrap';
 import Hero from './Hero'
-import Button from '../buttons/Button'
-
+import About from './About'
 
 function Landing() {
   return (
     <div>
-      <Hero/>
-      {/* <Button>Stuff</Button> */}
-
+      <Hero />
+      <About />
     </div>
   );
 }
