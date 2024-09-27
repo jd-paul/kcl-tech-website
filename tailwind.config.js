@@ -36,9 +36,9 @@ const config = {
         "gradient-c": "rgb(79, 69, 165)", // #4F45A5
       },
       fontFamily: {
-        "share-tech": ["Share Tech Mono", "monospace"],
-        "titillium": ["Titillium Web", "sans-serif"],
-        "exo": ["Exo", "sans-serif"],
+        'share-tech': ['"Share Tech Mono"', 'monospace'],
+        'titillium': ['"Titillium Web"', 'sans-serif'],
+        'exo': ['"Exo"', 'sans-serif'],
       },
     },
   },

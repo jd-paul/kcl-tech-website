@@ -90,7 +90,7 @@ const Hero = () => {
 
             <div className="relative z-10 flex flex-col h-full">
                 <div className="absolute left-[1.5rem] right-[1.5rem] top-[20%] md:left-[15%] md:pr-[15%] md:top-[25%] text-left">
-                    <h1 className="inline-block text-5xl font-share-tech font-bold text-main-color bg-white bg-opacity-80 p-2 mb-1">
+                    <h1 className="inline-block text-6xl font-share-tech font-bold text-main-color bg-white bg-opacity-80 p-2 mb-2">
                         Welcome to KCL Tech
                     </h1>
                     <h2 className="text-xl text-white mb-2 font-titillium">King's College London's Technology Society</h2>

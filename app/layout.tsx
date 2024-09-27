@@ -2,15 +2,22 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import { Share_Tech_Mono, Titillium_Web, Exo } from "next/font/google";
+
+const shareTechMono = Share_Tech_Mono({
+  weight: "400", // Share Tech Mono only has one weight
+  subsets: ["latin"],
+  variable: "--font-share-tech-mono",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const titilliumWeb = Titillium_Web({
+  weight: ["200", "300", "400", "600", "700", "900"], // Multiple weights for Titillium Web
+  subsets: ["latin"],
+  variable: "--font-titillium-web",
+});
+const exo = Exo({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Multiple weights for Exo
+  subsets: ["latin"],
+  variable: "--font-exo",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${shareTechMono.variable} ${titilliumWeb.variable} ${exo.variable} antialiased`}
       >
         {children}
       </body>
