@@ -9,9 +9,11 @@ import ImageTwo from "../../images/slideshow2.jpg";
 import ImageThree from "../../images/slideshow3.jpg";
 import ImageFour from "../../images/slideshow4.jpg";
 
+import Link from 'next/link';
+
 // Event data (if you only want one event)
 const event = {
-    title: "KCL X UCL TechSummit 2024 - The UK's biggest student led career fair",
+    title: "KCL X UCL brings you TechSummit 2024 - The UK's biggest student led career fair",
     description: "👤 25+ guest speakers 🚀 15+  tech companies 💬 5+ panel discussions",
     image: ImageThree,
     link: "https://www.kcltech.co.uk/hackkings.html",
@@ -39,10 +41,10 @@ const Hero = () => {
 
             <div className="relative z-10 flex flex-col h-full">
                 <div className="absolute left-[1.5rem] right-[1.5rem] top-[20%] md:left-[15%] md:pr-[15%] md:top-[25%] text-left">
-                    <h1 className="inline-block text-6xl font-share-tech font-bold text-main-color bg-white bg-opacity-80 p-2 mb-2">
+                    <h1 className="inline-block text-4xl md:text-6xl font-share-tech font-bold text-main-color bg-white bg-opacity-80 p-2 mb-2" style={{ letterSpacing: '-0.05em' }}>
                         Welcome to KCL Tech
                     </h1>
-                    <h2 className="text-xl text-neutral-200 mb-2 font-titillium">King's College London's Technology Society</h2>
+                    <h2 className="text-xl text-neutral-200 mb-[0.75rem] font-titillium">King's College London's Technology Society</h2>
                     <Button
                         id="becomeMemberBtn"
                         label="Become a Member"
@@ -52,15 +54,15 @@ const Hero = () => {
                 </div>
 
                 <div className="absolute left-[1.5rem] right-[1.5rem] bottom-[20%] md:right-[15%] md:pl-[15%] md:bottom-[25%] text-right">
-                    <h1 id="eventTitle" className="event-title text-neutral-50 text-3xl font-bold">{event.title}</h1>
-                    <h2 id="eventDescription" className="event-description text-neutral-300 text-xl mt-2 mb-[0.5rem]">{event.description}</h2>
+                    <h1 id="eventTitle" className="event-title text-neutral-200 text-2xl md:text-3xl font-bold">{event.title}</h1>
+                    <h2 id="eventDescription" className="event-description text-neutral-300 text-xl mt-2 mb-[0.75rem]">{event.description}</h2>
 
-                    <Button
-                        id="learnMoreBtn"
-                        type="white"
-                        label="Learn More"
-                        onClick={() => window.open(event.link, '_blank')}
-                    />
+                    <Link href="/techsummit">
+                        <Button
+                            type="white"
+                            label="Check out TechSummit Here!"
+                        />
+                    </Link>
                 </div>
             </div>
 

@@ -22,10 +22,10 @@ const Footer = () => {
             <div className="slides-generic_light" style={{ backgroundColor: 'white' }}>
                 <div className="content-generic">
                     <div style={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
-                        <h2 className="pb-1">Upcoming Events</h2>
+                        <h1 className="text-3xl text-neutral-800 font-titillium font-bold pb-2">Our Events</h1>
                         <button className='accordion'>
                             <a style={{ textDecoration: 'none' }} href="#">
-                                <h2><b>{data.title}</b></h2>
+                                <h2 className="text-lg"><b>{data.title}</b></h2>
                             </a>
                             <p><b>Time:</b> {data.start} - {data.finish} <b>Date:</b> {data.date} <b>Location:</b> {data.location} <b>Bring:</b> {data.bring}</p>
                         </button>
@@ -36,9 +36,9 @@ const Footer = () => {
                     </div>
                     <hr />
                     <div style={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
-                        <h2 className="pb-1">Latest Blog Posts</h2>
+                        <h1 className="text-3xl text-neutral-800 font-titillium font-bold pb-2">Latest Staff Blogs</h1>
                         <button className='accordion'>
-                            <h2>{data.title}</h2>
+                            <h2 className="text-lg"><b>{data.title}</b></h2>
                             <h3>{data.author}</h3>
                             <p>{data.date}</p>
                         </button>
@@ -53,10 +53,10 @@ const Footer = () => {
                     </div>
                     <hr />
                     <div style={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
-                        <h2 className="pb-1">Latest Opportunities</h2>
+                        <h1 className="text-3xl text-neutral-800 font-titillium font-bold pb-2">KCL Tech Opportunities</h1>
                         <button className='accordion'>
                             <a href={data.url} target='_blank' rel='noopener noreferrer'><h2>{data.title}</h2></a>
-                            <h3>{data.company}</h3>
+                            <h2 className="text-lg"><b>{data.title}</b></h2>
                             <p>{data.deadline}</p>
                         </button>
                         <div className='panel' style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>

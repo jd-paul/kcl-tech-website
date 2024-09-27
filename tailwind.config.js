@@ -39,6 +39,7 @@ const config = {
         'share-tech': ['"Share Tech Mono"', 'monospace'],
         'titillium': ['"Titillium Web"', 'sans-serif'],
         'exo': ['"Exo"', 'sans-serif'],
+        'playfair': ['"Playfair Display"', 'serif'],
       },
     },
   },

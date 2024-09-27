@@ -18,8 +18,8 @@ const Card: React.FC<CardProps> = ({ title, content, imageUrl, imageAlt, buttonT
     // Define styles for different card types
     const cardStyles = {
         white: 'bg-neutral-100 text-neutral-900',
-        black: 'bg-dark-grey text-white',
-        frosted: 'bg-white bg-opacity-5 backdrop-blur-md shadow-lg text-white border border-white border-opacity-10', // Frosted glass effect
+        black: 'bg-dark-grey text-neutral-50',
+        frosted: 'bg-white bg-opacity-5 backdrop-blur-md shadow-lg text-neutral-50 border border-white border-opacity-10', // Frosted glass effect
     };
 
     return (

@@ -6,6 +6,7 @@
   --font-share-tech-mono: "Share Tech Mono", monospace;
   --font-titillium-web: "Titillium Web", sans-serif;
   --font-exo: "Exo", sans-serif;
+  --font-playfair-display: "Playfair Display", serif;
 }
 
 /* Define font classes */
@@ -21,9 +22,8 @@
   font-family: var(--font-exo);
 }
 
-.font-signika {
-  font-family: 'Signika', sans-serif;
-  /* Add a default font for Signika, if needed */
+.font-playfair-display {
+  font-family: var(--font-playfair-display);
 }
 
 
@@ -397,8 +397,8 @@ body {
   /* Stacks children vertically */
   padding-top: 2rem;
   padding-bottom: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* Generic content container for light themed */
@@ -409,8 +409,8 @@ body {
   flex-direction: column;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* Fading animation */
@@ -760,8 +760,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .overlay {

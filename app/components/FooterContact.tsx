@@ -6,13 +6,13 @@ const Footer = () => {
             <div className="content-generic">
                 <hr className="bg-main-color h-[1.5px]" />
 
-                <div style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
-                    <h4><a style={{ float: 'right' }} href="login.html">Login</a></h4>
-                    <h4><a href="mailto:contact@kcltech.co.uk" target="_blank" rel='noopener noreferrer'>contact@kcltech.co.uk</a> | <a href="about.html">About us</a></h4>
+                <div className="py-3 font-exo">
+                    <h4 className="font-bold underline" style={{ float: 'right' }}><a href="login.html">Staff login</a></h4>
+                    <h4>Contact us: <a href="mailto:contact@kcltech.co.uk" target="_blank" rel='noopener noreferrer' className="font-bold underline">contact@kcltech.co.uk</a></h4>
                 </div>
                 <script type="text/javascript" src="js.js"></script>
             </div>
-        </div>
+        </div >
     );
 };
 

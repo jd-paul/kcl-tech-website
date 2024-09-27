@@ -27,9 +27,8 @@ function About() {
             <div className="slides-generic bg-[#202020]"
                 style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '6rem', margin: 0 }}>
                 <div className="content-generic">
-                    <div className="text-5xl text-neutral-50">
-                        <h1 className="font-exo font-bold leading-[3.5rem]">We create. We are King's Technology Society.</h1>
-                    </div>
+
+                    <h1 className="text-4xl md:text-5xl text-neutral-50 font-exo font-bold leading-[3.5rem] mb-1">We create. We are King's Technology Society.</h1>
 
                     <div className="responsive-grid py-[4rem]">
                         <div>
@@ -37,7 +36,7 @@ function About() {
                                 // Tech vision.
                             </h4>
 
-                            <p className="text-neutral-50 text-3xl pr-[0.5rem] font-titillium left leading-[2.5rem]">
+                            <p className="text-neutral-50 text-2xl md:text-3xl pr-[0.5rem] font-titillium left leading-[2.5rem]">
                                 We hope to empower ambitious students across London to pursue their technological paths.
                             </p>
                         </div>
@@ -47,12 +46,12 @@ function About() {
                                 // Tech mission.
                             </h4>
 
-                            <p className="text-neutral-50 text-3xl pr-[0.5rem] font-titillium left leading-[2.5rem]">
+                            <p className="text-neutral-50 text-2xl md:text-3xl pr-[0.5rem] font-titillium left leading-[2.5rem]">
                                 We are a student-run organization at London. We host events and bring in industry speakers.
                             </p>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pb-10">
                         <Cards
                             title="KCL Tech - About Us"
                             content=" Join KCL Tech Soc, where students can explore the field of computer science and take part in a vibrant community! Everyone is welcome!"
@@ -100,13 +99,11 @@ function About() {
             </div>
 
             <div className="parallax" style={{ backgroundImage: `url(${ImageMain.src})`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                <div className="overlay" style={{ backgroundColor: 'rgba(255, 148, 109, 0.75)', filter: 'brightness(0.25)' }}></div>
+                <div className="overlay" style={{ backgroundColor: 'rgba(255, 148, 109, 0.75)', filter: 'brightness(0.2)' }}></div>
 
                 {/* <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gridGap: '1rem', width: '100%', marginTop: '1rem' }}> */}
                 <div className="content-generic" style={{ position: 'relative', zIndex: 2, paddingTop: '7rem', paddingBottom: '10rem' }}>
-                    <div className="text-5xl text-neutral-50 mb-1">
-                        <h1 className="font-exo font-bold leading-[3.5rem]">Our Sponsors and Speakers</h1>
-                    </div>
+                    <h1 className="text-4xl md:text-5xl text-neutral-50 font-exo font-bold leading-[3.5rem] mb-1">Our Sponsors and Speakers</h1>
                     <div className="text-xl text-neutral-200 mb-6">
                         <h2 className="font-exo font-light">The work that the KCL Tech Society does would not be possible without the support of our generous sponsors and speakers. If you are interested in working with us, <Link href="/sponsors"><b className="text-neutral-50 underline">please reach out</b></Link>!</h2>
                     </div>

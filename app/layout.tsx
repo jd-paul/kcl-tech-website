@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-import { Share_Tech_Mono, Titillium_Web, Exo } from "next/font/google";
+import { Share_Tech_Mono, Titillium_Web, Exo, Playfair_Display } from "next/font/google";
 
 const shareTechMono = Share_Tech_Mono({
   weight: "400", // Share Tech Mono only has one weight
@@ -18,6 +18,11 @@ const exo = Exo({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Multiple weights for Exo
   subsets: ["latin"],
   variable: "--font-exo",
+});
+const playfairDisplay = Playfair_Display({
+  weight: ["400", "500", "600", "700", "800", "900"], // Multiple weights for Playfair Display
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
 });
 
 export const metadata: Metadata = {

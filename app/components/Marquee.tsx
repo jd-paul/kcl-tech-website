@@ -49,9 +49,11 @@ const SlidingFooter = () => {
     }, []);
 
     return (
-        <div style={footerStyle}>
-            <div style={marqueeStyle}>
-                <p style={footerTextStyle}><b>©2024 KCL Tech</b> - King's College London's Technology Society</p>
+        <div className="hidden sm:block">
+            <div style={footerStyle}>
+                <div style={marqueeStyle}>
+                    <p style={footerTextStyle}><b>©2024 KCL Tech</b> - King's College London's Technology Society</p>
+                </div>
             </div>
         </div>
     );
