@@ -1392,14 +1392,14 @@ video {
 .font-exo {
   font-family: "Exo", sans-serif;
 }
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
 .font-share-tech {
   font-family: "Share Tech Mono", monospace;
 }
 .font-titillium {
   font-family: "Titillium Web", sans-serif;
-}
-.font-playfair {
-  font-family: "Playfair Display", serif;
 }
 .text-2xl {
   font-size: 1.5rem;
