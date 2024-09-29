@@ -1,1 +1,8 @@
-{}
+{
+  "app\\techsummit\\page.tsx -> ./EventCountdown": {
+    "id": "app\\techsummit\\page.tsx -> ./EventCountdown",
+    "files": [
+      "static/chunks/_app-pages-browser_app_techsummit_EventCountdown_tsx.js"
+    ]
+  }
+}

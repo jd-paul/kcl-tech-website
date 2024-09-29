@@ -26,7 +26,6 @@
   font-family: var(--font-playfair-display);
 }
 
-
 .App {
   text-align: center;
 }
@@ -806,9 +805,11 @@ body {
   max-width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background-color: #242424;
-  background: linear-gradient(0deg,
-      rgba(255, 148, 109, 0.1) 0%,
-      rgba(219, 190, 255, 0.2) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 148, 109, 0.1) 0%,
+    rgba(219, 190, 255, 0.2) 100%
+  );
   box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.33);
   border-radius: 5px;
   overflow: hidden;

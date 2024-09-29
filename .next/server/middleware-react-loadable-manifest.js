@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"app\\\\techsummit\\\\page.tsx -> ./EventCountdown\":{\"id\":\"app\\\\techsummit\\\\page.tsx -> ./EventCountdown\",\"files\":[\"static/chunks/_app-pages-browser_app_techsummit_EventCountdown_tsx.js\"]}}"

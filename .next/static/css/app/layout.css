@@ -1,6 +1,6 @@
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Share_Tech_Mono","arguments":[{"weight":"400","subsets":["latin"],"variable":"--font-share-tech-mono"}],"variableName":"shareTechMono"} ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Share_Tech_Mono","arguments":[{"weight":"400","subsets":["latin"],"variable":"--font-share-tech-mono"}],"variableName":"shareTechMono"} ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* latin */
 @font-face {
   font-family: '__Share_Tech_Mono_3ec33c';
@@ -14,9 +14,9 @@
 }.__variable_3ec33c {--font-share-tech-mono: '__Share_Tech_Mono_3ec33c', '__Share_Tech_Mono_Fallback_3ec33c'
 }
 
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Titillium_Web","arguments":[{"weight":["200","300","400","600","700","900"],"subsets":["latin"],"variable":"--font-titillium-web"}],"variableName":"titilliumWeb"} ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Titillium_Web","arguments":[{"weight":["200","300","400","600","700","900"],"subsets":["latin"],"variable":"--font-titillium-web"}],"variableName":"titilliumWeb"} ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* latin-ext */
 @font-face {
   font-family: '__Titillium_Web_dfe22a';
@@ -129,9 +129,9 @@
 }.__variable_dfe22a {--font-titillium-web: '__Titillium_Web_dfe22a', '__Titillium_Web_Fallback_dfe22a'
 }
 
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Exo","arguments":[{"weight":["100","200","300","400","500","600","700","800","900"],"subsets":["latin"],"variable":"--font-exo"}],"variableName":"exo"} ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Exo","arguments":[{"weight":["100","200","300","400","500","600","700","800","900"],"subsets":["latin"],"variable":"--font-exo"}],"variableName":"exo"} ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* vietnamese */
 @font-face {
   font-family: '__Exo_3adbf2';
@@ -379,9 +379,9 @@
 }.__variable_3adbf2 {--font-exo: '__Exo_3adbf2', '__Exo_Fallback_3adbf2'
 }
 
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Playfair_Display","arguments":[{"weight":["400","500","600","700","800","900"],"subsets":["latin"],"variable":"--font-playfair-display"}],"variableName":"playfairDisplay"} ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Playfair_Display","arguments":[{"weight":["400","500","600","700","800","900"],"subsets":["latin"],"variable":"--font-playfair-display"}],"variableName":"playfairDisplay"} ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic */
 @font-face {
   font-family: '__Playfair_Display_603b0e';
@@ -1106,6 +1106,39 @@ video {
 [hidden] {
   display: none;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 .visible {
   visibility: visible;
 }
@@ -1205,6 +1238,9 @@ video {
 .h-\[1\.5px\] {
   height: 1.5px;
 }
+.h-\[22rem\] {
+  height: 22rem;
+}
 .h-\[44\.18px\] {
   height: 44.18px;
 }
@@ -1223,11 +1259,17 @@ video {
 .min-h-\[42rem\] {
   min-height: 42rem;
 }
+.w-\[100\%\] {
+  width: 100%;
+}
 .w-full {
   width: 100%;
 }
 .min-w-\[60px\] {
   min-width: 60px;
+}
+.max-w-\[800px\] {
+  max-width: 800px;
 }
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
@@ -1241,6 +1283,9 @@ video {
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -1272,6 +1317,9 @@ video {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.rounded-\[5px\] {
+  border-radius: 5px;
 }
 .rounded-lg {
   border-radius: 0.5rem;
@@ -1313,6 +1361,14 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(212 212 212 / var(--tw-bg-opacity));
 }
+.bg-neutral-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+}
+.bg-neutral-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
+}
 .bg-transparent {
   background-color: transparent;
 }
@@ -1338,6 +1394,9 @@ video {
 }
 .p-4 {
   padding: 1rem;
+}
+.p-\[3rem\] {
+  padding: 3rem;
 }
 .px-3 {
   padding-left: 0.75rem;
@@ -1386,6 +1445,9 @@ video {
 .text-left {
   text-align: left;
 }
+.text-center {
+  text-align: center;
+}
 .text-right {
   text-align: right;
 }
@@ -1417,6 +1479,10 @@ video {
   font-size: 3rem;
   line-height: 1;
 }
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1429,6 +1495,9 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.font-black {
+  font-weight: 900;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -1438,8 +1507,14 @@ video {
 .font-medium {
   font-weight: 500;
 }
+.font-normal {
+  font-weight: 400;
+}
 .font-semibold {
   font-weight: 600;
+}
+.italic {
+  font-style: italic;
 }
 .leading-\[2\.5rem\] {
   line-height: 2.5rem;
@@ -1447,9 +1522,17 @@ video {
 .leading-\[3\.5rem\] {
   line-height: 3.5rem;
 }
+.text-accent-color-a {
+  --tw-text-opacity: 1;
+  color: rgb(255 148 109 / var(--tw-text-opacity));
+}
 .text-main-color {
   --tw-text-opacity: 1;
   color: rgb(8 60 92 / var(--tw-text-opacity));
+}
+.text-neutral-100 {
+  --tw-text-opacity: 1;
+  color: rgb(245 245 245 / var(--tw-text-opacity));
 }
 .text-neutral-200 {
   --tw-text-opacity: 1;
@@ -1478,10 +1561,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-neutral-100 {
-  --tw-text-opacity: 1;
-  color: rgb(245 245 245 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -1575,7 +1654,6 @@ video {
 .font-playfair-display {
   font-family: var(--font-playfair-display);
 }
-
 
 .App {
   text-align: center;
@@ -2350,9 +2428,11 @@ body {
   max-width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background-color: #242424;
-  background: linear-gradient(0deg,
-      rgba(255, 148, 109, 0.1) 0%,
-      rgba(219, 190, 255, 0.2) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 148, 109, 0.1) 0%,
+    rgba(219, 190, 255, 0.2) 100%
+  );
   box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.33);
   border-radius: 5px;
   overflow: hidden;
@@ -2699,6 +2779,12 @@ body {
   fill: #ffffff;
 }
 
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:bg-accent-color-a:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 148 109 / var(--tw-bg-opacity));
@@ -2802,3 +2888,4 @@ body {
     line-height: 1;
   }
 }
+
