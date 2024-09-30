@@ -15,6 +15,7 @@
     "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.4.20",
     "kcltech-website": "file:",
+    "mysql2": "^3.11.3",
     "next": "14.2.12",
     "postcss": "^8.4.47",
     "react": "^18",

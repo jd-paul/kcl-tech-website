@@ -1,5 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/techsummit/page": "app/techsummit/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/api/db/route": "app/api/db/route.js"
 }
