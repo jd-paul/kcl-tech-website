@@ -24,18 +24,7 @@ import BlackRock from "../../images/BLK_eng_black_rgb.png";
 function About() {
   return (
     <div>
-      <div
-        className="slides-generic bg-[#202020]"
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingTop: "6rem",
-          margin: 0,
-        }}
-      >
+      <div className="slides-generic bg-[#202020]" style={{ paddingTop: "6rem", margin: 0 }} >
         <div className="content-generic">
           <h1 className="text-4xl md:text-5xl text-neutral-50 font-exo font-bold leading-[3.5rem] mb-1">
             We create. We are King's Technology Society.

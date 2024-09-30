@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Countdown, { CountdownRendererFn } from "react-countdown";
 
@@ -25,11 +27,13 @@ const EventCountdown: React.FC<EventCountdownProps> = ({ eventDate }) => {
       return <span>Event has started!</span>;
     } else {
       return (
-        <div>
-          <h1>Countdown to the Event</h1>
-          <p>
-            {days} days {hours} hours {minutes} minutes {seconds} seconds
-          </p>
+        <div >
+          <div className="text-center">
+            <h1 className="font-exo text-dark-grey font-black text-3xl">COMING SOON</h1>
+            <p className="font-share-tech text-dark-grey font-light text-3xl">
+              {days} days {hours} hours {minutes} minutes {seconds} seconds
+            </p>
+          </div>
         </div>
       );
     }
