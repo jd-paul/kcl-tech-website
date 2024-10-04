@@ -1,46 +1,64 @@
+import { getMongoDb } from "@/app/lib/mongodb";
 import { NextResponse } from "next/server";
-import mysql from "mysql2/promise";
+import type { NextRequest } from "next/server";
+import { Db } from "mongodb";
 
 export async function GET() {
-  // Define the database connection details using types
-  const host_name: string = process.env.DB_HOST!;
-  const database: string = process.env.DB_NAME!;
-  const user_name: string = process.env.DB_USER!;
-  const password: string = process.env.DB_PASSWORD!;
-
-  console.log("host_name: ", host_name);
-  console.log("database: ", database);
-  console.log("user_name: ", user_name);
-  console.log("password: ", password);
-
+  console.log("GET request made to /api/dbConnect");
   try {
-    // Create a MySQL connection using the mysql2/promise library with TypeScript
-    const connection = await mysql.createConnection({
-      host: host_name,
-      user: user_name,
-      password: password,
-      database: database,
-      port: 3306,
-    });
+    const db: Db = await getMongoDb();
+    const data = await db
+      .collection("opportunities")
+      .find({ _id: 1 as any })
+      .toArray();
 
-    // Execute a simple query to test the connection
-    const [rows] = await connection.execute("SELECT 1");
-
-    // Close the connection
-    await connection.end();
-
-    // Return a successful response with the result
-    return NextResponse.json({
-      message: "Connection to MySQL server successfully established.",
-      rows: rows,
-    });
-  } catch (error: any) {
-    // Handle errors by returning a failure response
+    return NextResponse.json({ ...data });
+  } catch (error) {
+    console.error("Database Error:", error);
     return NextResponse.json(
-      {
-        message: "Failed to connect to MySQL",
-        error: error,
-      },
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
+  }
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const db: Db = await getMongoDb();
+    const body = await request.json();
+
+    const result = await db.collection("your_collection").insertOne(body);
+
+    return NextResponse.json({
+      message: "Data inserted successfully",
+      id: result.insertedId,
+    });
+  } catch (error) {
+    console.error("Database Error:", error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
+  }
+}
+
+export async function PUT(request: NextRequest) {
+  try {
+    const db: Db = await getMongoDb();
+    const body = await request.json();
+
+    const result = await db
+      .collection("your_collection")
+      .updateOne({ _id: 1 as any }, { $set: body });
+
+    return NextResponse.json({
+      message: "Data updated successfully",
+      id: result.upsertedId,
+    });
+  } catch (error) {
+    console.error("Database Error:", error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
       { status: 500 }
     );
   }
