@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-import { Share_Tech_Mono, Titillium_Web, Exo, Playfair_Display } from "next/font/google";
+import {
+  Share_Tech_Mono,
+  Titillium_Web,
+  Exo,
+  Playfair_Display,
+} from "next/font/google";
 
 const shareTechMono = Share_Tech_Mono({
   weight: "400", // Share Tech Mono only has one weight

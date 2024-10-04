@@ -21,10 +21,13 @@ const Page: React.FC = () => {
             <NavbarBlack />
             <div className="slides-generic_light" style={{ backgroundColor: '#ffffff', paddingTop: '2rem' }}>
                 <div className="content-generic">
-                    <h2>Blog</h2>
-                    <br />
-                    <a href="addBlog.html"><h4>Submit a blog</h4></a>
-                    <br /><br />
+                    <div className="w-full p-4 bg-[#202020]">
+                        <h1 className="text-3xl text-neutral-50 font-exo font-bold">KCL Tech Staff Blogs</h1>
+                        <p className="text-neutral-200 font-light font-titillium text-xl">
+                            An assortment of blogs written by committee members. Perspectives and expertise on topics related to the society's goals, events, and initiatives.
+                        </p>
+                    </div>
+
 
                     <button className='accordion'>
                         <h2>{data.title}</h2>

@@ -1,37 +1,30 @@
-import React from 'react';
+"use client";
 
-import Navbar from '../components/Navbar';
+import React from "react";
+import dynamic from "next/dynamic";
+
+import Button from "../components/buttons/Button";
+import Navbar from "../components/Navbar";
 import FooterContact from "../components/FooterContact";
 import SlidingFooter from "../components/Marquee";
 
+import AboutNew from "../components/landing/AboutNew";
+
+import Hero from "./Hero";
+import Sponsors from  "./Sponsors";
+
+const EventCountdown = dynamic(() => import("./EventCountdown"), {
+  ssr: false, // Disable server-side rendering for this component
+});
+
 const Page: React.FC = () => {
-    const data = {
-        title: "Event Title",
-        start: "10:00 AM",
-        finish: "12:00 PM",
-        date: "2023-10-01",
-        location: "Event Location",
-        bring: "Laptop, charger, and enthusiasm!",
-        description: "Event description goes here."
-    };
+  return (
+    <>
+      <Hero />
+      <Sponsors />
 
-    return (
-        <>
-            <div style={{ backgroundColor: "#202020" }}>
-                <Navbar />
-                <div className="slides-generic_light">
-                    <div className="content-generic">
-                        <h1 className="font-playfair text-3xl font-bold text-neutral-100">
-                            The UK's Biggest Student Entrepreneur Careers Fair
-                        </h1>
-                    </div>
-                </div>
-            </div>
-
-            {/* <FooterContact /> */}
-        </>
-
-    );
+    </>
+  );
 };
 
 export default Page;

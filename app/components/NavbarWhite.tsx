@@ -36,12 +36,12 @@ const Navbar: React.FC = () => {
           <ul className="md:flex hidden space-x-1.5">
             <li>
               <Link href="/events">
-                <Button type="white" label="Events" />
+                <Button type="black2" label="Events" />
               </Link>
             </li>
             <li>
               <Link href="/blog">
-                <Button type="white" label="Blog" />
+                <Button type="black2" label="Blog" />
               </Link>
             </li>
             <li>
