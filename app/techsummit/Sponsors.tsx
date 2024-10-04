@@ -30,7 +30,7 @@ const logos = [
 
 const Sponsors: React.FC = () => {
     return (
-        <div className="slides-generic bg-[#202020]" style={{ paddingTop: "6rem", margin: 0 }}>
+        <div className="slides-generic bg-[#202020]" style={{ paddingTop: "6rem", paddingBottom: "6rem", margin: 0 }}>
             <div className="content-generic">
                 <h1 className="text-4xl md:text-5xl text-neutral-50 font-exo font-bold leading-[3.5rem] mb-1">
                     Our Sponsors and Partners

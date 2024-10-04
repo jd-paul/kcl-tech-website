@@ -2,6 +2,9 @@ import React from 'react';
 
 import NavbarBlack from '../components/NavbarBlack';
 
+import Image from 'next/image';
+import BlackRock from "../images/BLK_eng_black_rgb.png";
+
 const Page: React.FC = () => {
     const data = {
         title: "Event Title",
@@ -18,48 +21,30 @@ const Page: React.FC = () => {
             <NavbarBlack />
             <div className="slides-generic_light" style={{ backgroundColor: '#ffffff', paddingTop: '2rem' }}>
                 <div className="content-generic">
-                    <section className="type-b">
-                        <h2 style={{ color: 'white' }}>Become a Sponsor</h2>
-                        <p style={{ color: 'white' }}>
+                    <div className="w-full p-4 bg-[#202020] mb-[1rem]">
+                        <h1 className="text-3xl text-neutral-50 font-exo font-bold">Become a Sponsor</h1>
+                        <p className="text-neutral-200 font-light font-titillium text-xl">
                             Contact us to become a sponsor at{' '}
                             <a href="mailto:partnerships@kcltech.co.uk">
-                                <b>
-                                    <u>partnerships@kcltech.co.uk</u>
-                                </b>
+                                <span className="font-bold"><u>partnerships@kcltech.co.uk</u></span>
                             </a>.
                         </p>
-                        <p style={{ color: 'white' }}>
-                            Learn more{' '}
-                            <a href="/docs/KCLTech_GetInvolved.pdf">
-                                <b>
-                                    <u>here</u>
-                                </b>
-                            </a>.
-                        </p>
-                        <br />
-                    </section>
+                    </div>
 
-                    <br />
-                    <h1>Our Sponsors</h1>
-                    <br />
+                    <h1 className="text-3xl text-neutral-900 font-exo font-bold leading-[3.5rem] mt-1 mb-1">
+                        Our Sponsors
+                    </h1>
 
-                    <section className="type-a">
-                        <img src="logos/HK.png" width="70" height="70" className="icon" alt="HK Logo" />
-                        <br />
+                    <Image src={BlackRock} alt="BlackRock Logo" width={300} height={100} />
+                    <h1 className="text-2xl text-neutral-900 font-exo font-bold">BlackRock</h1>
+                    <p>
+                        Learn more about our sponsor at{' '}
                         <a href="https://www.blackrock.com/uk">
-                            <img src="./images/BLK_eng_black_rgb.png" alt="BlackRock Logo" height="100" width="300" />
-                        </a>
-                        <br />
-                        <h1>BlackRock</h1>
-                        <p>
-                            Learn more about our sponsor at{' '}
-                            <a href="https://www.blackrock.com/uk">
-                                <b>
-                                    <u>https://www.blackrock.com/uk</u>
-                                </b>
-                            </a>.
-                        </p>
-                    </section>
+                            <b>
+                                <u>https://www.blackrock.com/uk</u>
+                            </b>
+                        </a>.
+                    </p>
                 </div>
             </div>
         </div>

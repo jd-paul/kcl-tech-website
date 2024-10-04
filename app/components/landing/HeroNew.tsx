@@ -42,7 +42,7 @@ const Hero = () => {
       />
 
       <div className="relative z-10 flex flex-col h-full">
-        <div className="absolute left-[1.5rem] right-[1.5rem] top-[20%] md:left-[15%] md:pr-[15%] md:top-[25%] text-left">
+        <div className="absolute left-[1.5rem] right-[1.5rem] top-[20%] md:left-[15%] md:pr-[15%] md:top-[25%] flex flex-col items-start">
           <h1
             className="inline-block text-4xl md:text-6xl font-share-tech font-bold text-main-color bg-white bg-opacity-80 p-2 mb-2"
             style={{ letterSpacing: "-0.05em" }}
@@ -65,7 +65,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="absolute left-[1.5rem] right-[1.5rem] bottom-[20%] md:right-[15%] md:pl-[15%] md:bottom-[25%] text-right">
+        <div className="absolute left-[1.5rem] right-[1.5rem] bottom-[20%] md:right-[15%] md:pl-[15%] md:bottom-[25%] flex flex-col items-end text-right">
           <h1
             id="eventTitle"
             className="event-title text-neutral-200 text-2xl md:text-3xl font-bold"

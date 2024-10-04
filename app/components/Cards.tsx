@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({ title, content, imageUrl, imageAlt, buttonT
             <img
                 src={imageUrl}
                 alt={imageAlt}
-                style={{ borderRadius: '5px 5px 2.5px 2.5px', ...imageStyle }} // Spread custom imageStyle
+                style={{ borderRadius: '0px 0px 20px 20px', ...imageStyle }} // Spread custom imageStyle
             />
             <div className="px-4 pt-4 pb-7">
                 <h2 className="font-titillium text-xl font-bold pb-2">{title}</h2>
