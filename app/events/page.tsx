@@ -1,10 +1,36 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useState } from 'react';
 
 import NavbarBlack from '../components/NavbarBlack';
 import FooterContact from "../components/FooterContact";
 import SlidingFooter from "../components/Marquee";
+import { IEvent } from '../models/Event';
+import { useEventContext } from '../context/eventsContext';
 
 const Page: React.FC = () => {
+    const [pastEvents, setPastEvents] = useState<IEvent[]>([]);
+    const [futureEvents, setFutureEvents] = useState<IEvent[]>([]);
+
+    const { events, eventLoading: loading, eventError: error } = useEventContext();
+
+    // Ensure events are loaded before proceeding
+    useEffect(() => {
+        if (events) {
+            const pastEvents = events
+                .filter((event: IEvent) => new Date(event.date) < new Date())
+                .sort((a: IEvent, b: IEvent) => new Date(b.date).getTime() - new Date(a.date).getTime());
+            console.log(pastEvents);
+            setPastEvents(pastEvents);
+
+            const futureEvents = events.filter((event: IEvent) => new Date(event.date) >= new Date());
+            setFutureEvents(futureEvents);
+        }
+    }, [events]); // Add 'events' as a dependency here to ensure the hook runs correctly
+
+
+    if (error) return <p>Error: {error}</p>;
+
     const data = {
         title: "Event Title",
         start: "10:00 AM",
@@ -28,23 +54,16 @@ const Page: React.FC = () => {
                             </p>
                         </div>
 
-                        <button className='accordion'>
-                            <a style={{ textDecoration: 'none' }} href="#">
-                                <h2><b>{data.title}</b></h2>
-                            </a>
-                            <p>
-                                <b>Time:</b> {data.start} - {data.finish} <b>Date:</b> {data.date} <b>Location:</b> {data.location} <b>Bring:</b> {data.bring}
-                            </p>
-                        </button>
-                        <div className='panel'>
-                            <br />
-                            <p>{data.description}</p>
-                            <br />
-                            <img src='./uploads2/image.png' height='500' className='center' alt="Event" />
-                            <br />
-                            <br />
-                        </div>
-
+                        {loading ? <p>Loading events...</p> : futureEvents.length > 0 && futureEvents.map((event: IEvent) => (
+                            <button key={event.id} className='accordion'>
+                                <a style={{ textDecoration: 'none' }} href="#">
+                                    <h2><b>{event.title}</b></h2>
+                                </a>
+                                <p>
+                                    <b>Time:</b> {event.start_time} - {event.end_time} <b>Date:</b> {event.date} <b>Location:</b> {event.location} <b>Bring:</b> {event.requirements}
+                                </p>
+                            </button>
+                        ))}
 
                         <iframe
                             src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%233F51B5&ctz=Europe%2FLondon&title&src=ZmEwZTE2MzVkNWVlZjkyYWFmZDc4ZjgzZDg3YTM2ZWM0OTkxNTNiNjcwZDUzNmNkMDY2YjRlYTA3ZDQ5MjQxYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F6BF26"
@@ -57,18 +76,20 @@ const Page: React.FC = () => {
                         </a>
                         <br />
 
-
                         <h1 className="text-3xl text-neutral-900 font-exo font-bold leading-[3.5rem] mt-1 mb-1">
                             Past Events
                         </h1>
-                        <button className='accordion'>
-                            <a style={{ textDecoration: 'none' }} href="#">
-                                <h2><b>{data.title}</b></h2>
-                            </a>
-                            <p>
-                                <b>Time:</b> {data.start} - {data.finish} <b>Date:</b> {data.date} <b>Location:</b> {data.location} <b>Bring:</b> {data.bring}
-                            </p>
-                        </button>
+                        {loading ? <p>Loading events...</p> : pastEvents.length > 0 && pastEvents.map((event: IEvent) => (
+                            <button key={event.id} className='accordion'>
+                                <a style={{ textDecoration: 'none' }} href="#">
+                                    <h2><b>{event.title}</b></h2>
+                                </a>
+                                <p>
+                                    <b>Time:</b> {event.start_time} - {event.end_time} <b>Date:</b> {event.date} <b>Location:</b> {event.location} <b>Bring:</b> {event.requirements}
+                                </p>
+                            </button>
+                        ))}
+
                         <div className='panel'>
                             <br />
                             <p>{data.description}</p>
@@ -84,7 +105,6 @@ const Page: React.FC = () => {
 
             <FooterContact />
         </>
-
     );
 };
 

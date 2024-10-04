@@ -8,6 +8,9 @@ import {
   Exo,
   Playfair_Display,
 } from "next/font/google";
+import { EventProvider } from "./context/eventsContext";
+import { BlogProvider } from "./context/blogsContext";
+import { OpportunityProvider } from "./context/oppsContext";
 
 const shareTechMono = Share_Tech_Mono({
   weight: "400", // Share Tech Mono only has one weight
@@ -45,7 +48,13 @@ export default function RootLayout({
       <body
         className={`${shareTechMono.variable} ${titilliumWeb.variable} ${exo.variable} antialiased`}
       >
-        {children}
+        <EventProvider>
+          <BlogProvider>
+            <OpportunityProvider>
+              {children}
+            </OpportunityProvider>
+          </BlogProvider>
+        </EventProvider>
       </body>
     </html>
   );
