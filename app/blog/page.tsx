@@ -21,7 +21,7 @@ const Page: React.FC = () => {
             <NavbarBlack />
             <div className="slides-generic_light" style={{ backgroundColor: '#ffffff', paddingTop: '2rem' }}>
                 <div className="content-generic">
-                    <div className="w-full p-4 bg-[#202020]">
+                    <div className="w-full p-4 bg-[#202020] mb-[1rem]">
                         <h1 className="text-3xl text-neutral-50 font-exo font-bold">KCL Tech Staff Blogs</h1>
                         <p className="text-neutral-200 font-light font-titillium text-xl">
                             An assortment of blogs written by committee members. Perspectives and expertise on topics related to the society's goals, events, and initiatives.

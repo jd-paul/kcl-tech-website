@@ -68,13 +68,13 @@ const Hero = () => {
         <div className="absolute left-[1.5rem] right-[1.5rem] bottom-[20%] md:right-[15%] md:pl-[15%] md:bottom-[25%] flex flex-col items-end text-right">
           <h1
             id="eventTitle"
-            className="event-title text-neutral-200 text-2xl md:text-3xl font-bold"
+            className="event-title text-neutral-200 text-2xl font-bold font-exo"
           >
             {event.title}
           </h1>
           <h2
             id="eventDescription"
-            className="event-description text-neutral-300 text-xl mt-2 mb-[0.75rem]"
+            className="event-description text-neutral-300 text-xl mt-2 mb-[0.75rem] font-titillium"
           >
             {event.description}
           </h2>
