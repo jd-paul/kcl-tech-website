@@ -21,7 +21,7 @@ export const OpportunityProvider: React.FC<{ children: React.ReactNode }> = ({ c
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch('/api/events');
+                const response = await fetch('/api/opportunities');
                 const data = await response.json();
                 setOpportunities(data);
             } catch (err) {
