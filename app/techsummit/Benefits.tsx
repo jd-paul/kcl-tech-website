@@ -1,13 +1,8 @@
 import React from "react";
 
-import Background1 from "../images/picture-background1.jpg";
-import Background2 from "../images/picture-background2.jpg";
 import Background3 from "../images/techsummit/background1.png";
 import Background4 from "../images/techsummit/background6.png";
 import Object1 from "../images/techsummit/background5.png";
-import Strand from "../images/techsummit/strand1.jpg";
-
-import LivePicture1 from "../images/techsummit/22/15.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
@@ -45,12 +40,15 @@ const Hero: React.FC = () => {
           }}
         >
           <div className="content-generic" style={{ zIndex: 2 }}>
-            <div className="grid grid-cols-7 grid-rows-1 gap-5">
-              <div className="col-span-4 row-span-1">
-                {" "}
-                {/* div1 occupies columns 1 to 3 */}
-                <h1 className="text-4xl md:text-6xl text-neutral-50 font-exo font-bold leading-[3.5rem] mb-[1rem]">
-                  Boost your career in one day
+            <div className="grid md:grid-cols-7 md:grid-rows-1 gap-5 grid-cols-1">
+              {/* First div - Text content */}
+              <div className="md:col-span-4 md:row-span-1">
+                <h1 className="text-4xl md:text-6xl text-neutral-50 font-exo font-bold md:leading-[3.5rem] mb-[1rem]">
+                  Is TechSummit for You?
+                </h1>
+                <h1 className="text-3xl md:text-3xl text-neutral-100 font-titillium font-bold md:leading-[3.5rem] mb-[1rem]">
+                  TechSummit is one of our most anticipated events. It is a
+                  unique blend of career opportunities and engaging workshops.
                 </h1>
                 <ul className="pl-[0.5rem]">
                   <li className="font-titillium text-2xl font-normal italic text-neutral-200">
@@ -64,36 +62,38 @@ const Hero: React.FC = () => {
                   </li>
                 </ul>
               </div>
-              <div className="col-span-3 row-span-1">
+
+              {/* Second div - Image */}
+              <div className="md:col-span-3 md:row-span-1">
                 <img src={Object1.src} alt="Background 4" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-[5rem]">
-              <div className="bg-accent-color-c p-4 text-white text-center ">
+              <div className="bg-transparent p-4 text-white text-center ">
                 <FontAwesomeIcon
                   icon={faPeopleGroup}
-                  className="text-[8rem] mb-[1rem] text-dark-grey"
+                  className="text-[8rem] mb-[1rem] text-neutral-50"
                 />
-                <h2 className="text-3xl font-exo font-bold mb-2 text-dark-grey">
+                <h2 className="text-3xl font-exo font-bold mb-2 text-neutral-200">
                   <span className="">15+</span> hottest tech companies
                 </h2>
               </div>
-              <div className="bg-accent-color-a p-4 text-white text-center">
+              <div className="bg-transparent p-4 text-white text-center ">
                 <FontAwesomeIcon
                   icon={faCommentsDollar}
-                  className="text-[8rem] mb-[1rem] text-dark-grey"
+                  className="text-[8rem] mb-[1rem] text-neutral-50"
                 />
-                <h2 className="text-3xl font-exo font-bold mb-2 text-dark-grey">
+                <h2 className="text-3xl font-exo font-bold mb-2 text-neutral-200">
                   <span className="">5+</span> panel workshops and networking
                 </h2>
               </div>
-              <div className="bg-accent-color-c p-4 text-white text-center">
+              <div className="bg-transparent p-4 text-white text-center ">
                 <FontAwesomeIcon
                   icon={faMicrophoneLines}
-                  className="text-[8rem] mb-[1rem] text-dark-grey"
+                  className="text-[8rem] mb-[1rem] text-neutral-50"
                 />
-                <h2 className="text-3xl font-exo font-bold mb-2 text-dark-grey">
+                <h2 className="text-3xl font-exo font-bold mb-2 text-neutral-200">
                   <span className="">20+</span> speakers looking to hire fresh
                   talent
                 </h2>
@@ -121,29 +121,6 @@ const Hero: React.FC = () => {
                 label="Grab your FREE ticket!"
                 className="mt-[0.5rem]"
               />
-            </div>
-
-            <div className="grid grid-cols-7 grid-rows-1 gap-5 mt-[5rem]">
-              <div className="col-span-3 row-span-1">
-                {/* <img src={Object1.src} alt="Background 4" /> */}
-                <img
-                  src={LivePicture1.src}
-                  alt="Strand Campus"
-                  className="w-full h-auto rounded-[5px]"
-                />
-              </div>
-              <div className="col-span-4 row-span-1">
-                <h1 className="text-4xl md:text-6xl text-neutral-50 font-exo font-bold leading-[3.5rem] mb-[1rem]">
-                  When and Where?
-                </h1>
-                <h2 className="font-titillium text-2xl font-normal italic text-neutral-200">
-                  <b>Location:</b> Bush House North Wing, King's College London,
-                  30 Aldwych
-                </h2>
-                <h2 className="font-titillium text-2xl font-normal italic text-neutral-200">
-                  <b>Time:</b> October 19, 10:00 AM - 5:00 PM
-                </h2>
-              </div>
             </div>
           </div>
         </div>
