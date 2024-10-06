@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React from "react";
+import Sliding from "./Sliding";
 
 // Importing logos
 import BradStarkeey from "./Logos/Brad Starkey.png";
@@ -14,66 +15,45 @@ import Roche from "./Logos/Sanjana Muppasani.png";
 import ZeroGravity from "./Logos/ZeroGravity.jpg";
 
 // List of logos
+
+const whiteSafeLogos = [
+  { src: BradStarkeey, alt: "Brad Starkey" },
+  { src: ZeroGravity, alt: "ZeroGravity" },
+  { src: BrightNetwork, alt: "Bright Network" },
+  { src: EI, alt: "EI" },
+  { src: Roche, alt: "Sanjana Muppasani" },
+  { src: EJF, alt: "Eleftherios Jerry Floros" },
+];
+
 const logos = [
-    BradStarkeey,
-    BrightNetwork,
-    EI,
-    EJF,
-    Elycian,
-    KBC,
-    Kickstart,
-    KLabs,
-    LeWagon,
-    Roche,
-    ZeroGravity,
+  { src: Elycian, alt: "Elycian" },
+  { src: KBC, alt: "KBC" },
+  { src: Kickstart, alt: "Kickstart" },
+  { src: KLabs, alt: "King's Labs" },
+  { src: LeWagon, alt: "Le Wagon" },
 ];
 
 const Sponsors: React.FC = () => {
-    const scrollRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const scrollDiv = scrollRef.current;
-        if (!scrollDiv) return;
-
-        const scrollWidth = scrollDiv.scrollWidth / 2; // total scrollable width
-        let scrollAmount = 0;
-
-        const scrollStep = () => {
-            if (scrollAmount >= scrollWidth) {
-                scrollAmount = 0; // Reset to start
-            }
-            scrollDiv.scrollLeft = scrollAmount;
-            scrollAmount += 1; // Adjust speed here
-        };
-
-        const interval = setInterval(scrollStep, 10); // Adjust interval for speed
-        return () => clearInterval(interval);
-    }, []);
-
-    return (
-        <div className="slides-generic bg-[#202020]" style={{ paddingTop: "3rem", paddingBottom: "3rem", margin: 0 }}>
-            <div className="content-generic">
-                <h1 className="text-4xl md:text-5xl text-neutral-50 font-exo font-bold leading-[3.5rem] mb-[1rem]">
-                    Our Sponsors and Partners
-                </h1>
-
-                <div
-                    className="flex overflow-hidden whitespace-nowrap"
-                    ref={scrollRef}
-                    style={{ width: "100%", position: "relative" }}
-                >
-                    {/* Render logos twice for seamless scrolling */}
-                    <div className="flex">
-                        {[...logos, ...logos].map((logo, index) => (
-                            <div key={index} className="mx-2 flex-shrink-0">
-                                <img src={logo.src} alt={`Sponsor Logo ${index + 1}`} className="h-32" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+  return (
+    <>
+      <div
+        className="slides-generic bg-white"
+        style={{ paddingTop: "3rem", paddingBottom: "3rem", margin: 0 }}
+      >
+        <div className="content-generic">
+          <Sliding logos={whiteSafeLogos} />
         </div>
-    );
+      </div>
+      <div
+        className="slides-generic bg-black"
+        style={{ paddingTop: "3rem", paddingBottom: "3rem", margin: 0 }}
+      >
+        <div className="content-generic">
+          <Sliding logos={logos} />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Sponsors;
