@@ -133,7 +133,6 @@ function About() {
           }}
         ></div>
 
-        {/* <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gridGap: '1rem', width: '100%', marginTop: '1rem' }}> */}
         <div
           className="content-generic"
           style={{

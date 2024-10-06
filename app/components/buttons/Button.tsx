@@ -35,12 +35,11 @@ const Button: React.FC<ButtonProps> = ({
     purple:
       "bg-transparent text-white outline outline-1 outline-accent-color-c hover:bg-accent-color-c hover:text-dark-grey font-semibold",
     ticket:
-      "rounded-full font-exo font-black text-neutral-800 text-md bg-neutral-50 hover:scale-105 hover:text-dark-grey",
+      "rounded-full font-exo font-black text-neutral-100 text-md bg-[#159af5] hover:scale-105",
   };
 
-  const buttonClasses = `${baseClasses} ${typeClasses[type]} ${
-    className || ""
-  }`;
+  const buttonClasses = `${baseClasses} ${typeClasses[type]} ${className || ""
+    }`;
 
   return (
     <>
