@@ -5,6 +5,9 @@ import Background2 from "../images/picture-background2.jpg";
 import Background3 from "../images/techsummit/background1.png";
 import Background4 from "../images/techsummit/background6.png";
 import Object1 from "../images/techsummit/background5.png";
+import Strand from "../images/techsummit/strand1.jpg";
+
+import LivePicture1 from "../images/techsummit/22/15.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
@@ -36,13 +39,13 @@ const Hero: React.FC = () => {
           className="slides-generic"
           style={{
             paddingTop: "7rem",
-            paddingBottom: "300rem",
+            paddingBottom: "3rem",
             margin: 0,
             backgroundColor: "transparent",
           }}
         >
           <div className="content-generic" style={{ zIndex: 2 }}>
-            <div className="grid grid-cols-7 grid-rows-1 gap-3">
+            <div className="grid grid-cols-7 grid-rows-1 gap-5">
               <div className="col-span-4 row-span-1">
                 {" "}
                 {/* div1 occupies columns 1 to 3 */}
@@ -120,9 +123,14 @@ const Hero: React.FC = () => {
               />
             </div>
 
-            <div className="grid grid-cols-7 grid-rows-1 gap-3 mt-[5rem]">
+            <div className="grid grid-cols-7 grid-rows-1 gap-5 mt-[5rem]">
               <div className="col-span-3 row-span-1">
                 {/* <img src={Object1.src} alt="Background 4" /> */}
+                <img
+                  src={LivePicture1.src}
+                  alt="Strand Campus"
+                  className="w-full h-auto rounded-[5px]"
+                />
               </div>
               <div className="col-span-4 row-span-1">
                 <h1 className="text-4xl md:text-6xl text-neutral-50 font-exo font-bold leading-[3.5rem] mb-[1rem]">
