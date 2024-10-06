@@ -131,11 +131,18 @@ const Navbar: React.FC = () => {
                 </div>
 
                 <ul className="md:hidden flex flex-col items-center text-md font-share-tech font-bold">
-                  <li className="cursor-pointer">Events Information</li>
-                  <li>Staff Blogs</li>
-                  <li>Sponsors</li>
-                  <li>Student Opportunity Board</li>
-                  <li>Become a Member</li>
+                  <li className="cursor-pointer">
+                    <Link href="/events">Events Information</Link>
+                  </li>
+                  <li className="cursor-pointer">
+                    <Link href="/blog">Blogs</Link>
+                  </li>
+                  <li className="cursor-pointer">
+                    <Link href="/sponsors">Sponsors</Link>
+                  </li>
+                  <li className="cursor-pointer">
+                    <Link href="/opportunity">Student Opportunity Board</Link>
+                  </li>
                 </ul>
               </div>
             </div>
