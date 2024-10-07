@@ -159,7 +159,7 @@ function About() {
           >
             {/* Card 1 */}
             <Cards
-              title="Sponsor - BlackRock"
+              title="BlackRock (2022)"
               content="BlackRock is one of the world's leading providers of investment, advisory and risk management solutions."
               imageUrl={BlackRock.src}
               imageAlt="BlackRock Logo"
