@@ -5,21 +5,11 @@ import Link from "next/link";
 
 import ImageMain from "../../images/picture-of-main.jpg";
 import ImageGala from "../../images/picture-of-gala.jpeg";
-import ImagePresentation from "../../images/picture-of-presentation.jpg";
 import ImageTeam from "../../images/picture-of-team.jpeg";
 
-import StaffKatya from "../../images/committee/Ekaterina Hunter - President.jpg";
-import StaffWaseef from "../../images/committee/Waseef Khan - Hackathon Manager.jpeg";
-import StaffPaul from "../../images/committee/Paul San Diego - Website Manager and Signature Events Media Manager.jpeg";
-import StaffMin from "../../images/committee/Minseok Ryu - Head of Events.jpg";
-import StaffAgrima from "../../images/committee/Agrima Khare - Programming Lead.jpg";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
-import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-
 import BlackRock from "../../images/BLK_eng_black_rgb.png";
+import LeWagon from "../../techsummit/Logos/Le Wagon (SPONSOR) (2).png";
+import FinTech from "../../techsummit/Logos/FinTech Bites (SPONSOR).jpeg";
 
 function About() {
   return (
@@ -143,7 +133,7 @@ function About() {
           }}
         >
           <h1 className="text-4xl md:text-5xl text-neutral-50 font-exo font-bold leading-[3.5rem] mb-1">
-            Our Sponsors and Speakers
+            Our Sponsors
           </h1>
           <div className="text-xl text-neutral-200 mb-6">
             <h2 className="font-exo font-light">
@@ -170,31 +160,31 @@ function About() {
             {/* Card 1 */}
             <Cards
               title="Sponsor - BlackRock"
-              content="BlackRock is one of the world's leading providers of investment, advisory and risk management solutions. They invest for the future on behalf of clients and local communities."
+              content="BlackRock is one of the world's leading providers of investment, advisory and risk management solutions."
               imageUrl={BlackRock.src}
               imageAlt="BlackRock Logo"
               type="frosted"
-              imageStyle={{ filter: "invert(1)" }}
+              imageStyle={{ padding: "1rem", minHeight: "5rem", maxHeight: "10rem", width: "auto", display: "block", margin: "0 auto", filter: "invert(1)" }}
             />
 
             {/* Card 2 */}
             <Cards
-              title="Speaker - Name"
-              content="Desc."
-              imageUrl={BlackRock.src}
+              title="Le Wagon"
+              content="Le Wagon is ranked as the world's best coding bootcamp and has enabled thousands of people to change their careers."
+              imageUrl={LeWagon.src}
               imageAlt="BlackRock Logo"
               type="frosted"
-              imageStyle={{ filter: "invert(1)" }}
+              imageStyle={{ padding: "1rem", minHeight: "5rem", maxHeight: "10rem", width: "auto", display: "block", margin: "0 auto" }}
             />
 
             {/* Card 3 */}
             <Cards
-              title="Speaker - Name"
-              content="Desc."
-              imageUrl={BlackRock.src}
+              title="Fintech Bites"
+              content="FinTech Bites gives insights on FinTech market and information on the latest tech, regulatory, market trends in financial services."
+              imageUrl={FinTech.src}
               imageAlt="BlackRock Logo"
               type="frosted"
-              imageStyle={{ filter: "invert(1)" }}
+              imageStyle={{ padding: "1rem", minHeight: "5rem", maxHeight: "10rem", width: "auto", display: "block", margin: "0 auto" }}
             />
           </div>
         </div>
