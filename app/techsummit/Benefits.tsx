@@ -120,6 +120,7 @@ const Hero: React.FC = () => {
                 type="ticket"
                 label="Grab your FREE ticket!"
                 className="mt-[0.5rem]"
+                urlLink="https://www.huzzle.app/events/techsummit-2024-518616"
               />
             </div>
           </div>

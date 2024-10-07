@@ -8,11 +8,18 @@ import { useBlogContext } from '../context/blogsContext';
 import { IBlog } from '../models/Blog';
 import { IOpportunity } from '../models/Opportunity';
 import { useOpportunityContext } from '../context/oppsContext';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
     const [pastEvents, setPastEvents] = useState<IEvent[]>([]);
     const [pastBlogs, setPastBlogs] = useState<IBlog[]>([]);
     const [pastOpportunities, setPastOpportunities] = useState<IOpportunity[]>([]);
+
+    const [activeEvent, setActiveEvent] = useState<string | null>(null);
+    const [activeBlog, setActiveBlog] = useState<string | null>(null);
+    const [activeOpportunity, setActiveOpportunity] = useState<string | null>(null);
 
     const { events, eventLoading, eventError } = useEventContext();
     const { blogs, blogLoading, blogError } = useBlogContext();
@@ -71,23 +78,46 @@ const Footer: React.FC = () => {
                         {eventLoading ? <p>Loading events...</p> :
                             pastEvents.length > 0 ? (
                                 pastEvents.map((event: IEvent) => (
-                                    <div key={event.id}>
-                                        <button className='accordion'>
-                                            <a style={{ textDecoration: 'none' }} href="#">
-                                                <h2 className="text-lg"><b>{event.title}</b></h2>
-                                            </a>
-                                            <p>
-                                                <b>Time:</b> {event.start_time} - {event.end_time}{" "}
-                                                <b>Date:</b> {event.date}{" "}
-                                                <b>Location:</b> {event.location}{" "}
-                                                <b>Bring:</b> {event.requirements}
-                                            </p>
+                                    <article key={event._id} className="border-b border-slate-200">
+                                        <button
+                                            onClick={() =>
+                                                setActiveEvent(activeEvent === event._id ? null : event._id)
+                                            }
+                                            className="w-full flex justify-between items-center py-5 text-slate-800"
+                                            aria-expanded={activeEvent === event._id}
+                                            aria-controls={event.id}
+                                        >
+                                            <span>{event.title}</span>
+                                            <span className="text-slate-800 transition-transform duration-300">
+                                                <FontAwesomeIcon
+                                                    icon={activeEvent === event._id ? faMinus : faPlus}
+                                                    className="w-4 h-4"
+                                                />
+                                            </span>
                                         </button>
-                                        <div className='panel' style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>
-                                            <p>{event.description}</p>
-                                            <img src='./uploads2/image.png' height='500' className='center' alt="Event" />
-                                        </div>
-                                    </div>
+                                        {activeEvent === event._id && (
+                                            <div
+                                                id={event._id}
+                                                className="max-h-96 overflow-hidden transition-all duration-500 ease-in-out"
+                                            >
+                                                <div className="pb-5 text-sm text-slate-500">
+                                                    <p>
+                                                        <b>Time:</b> {event.start_time} - {event.end_time}
+                                                    </p>
+                                                    <p>
+                                                        <b>Date:</b> {event.date}
+                                                    </p>
+                                                    <p>
+                                                        <b>Location:</b> {event.location}
+                                                    </p>
+                                                    <p>
+                                                        <b>Bring:</b> {event.requirements}
+                                                    </p>
+                                                    <p>{event.description}</p>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </article>
                                 ))
                             ) : (
                                 <p>No upcoming events.</p>
@@ -102,21 +132,51 @@ const Footer: React.FC = () => {
                         {blogLoading ? <p>Loading blogs...</p> :
                             pastBlogs.length > 0 ? (
                                 pastBlogs.map((blog: IBlog) => (
-                                    <div key={blog.id}>
-                                        <button className='accordion'>
-                                            <a style={{ textDecoration: 'none' }} href="#">
-                                                <h2 className="text-lg"><b>{blog.title}</b></h2>
-                                            </a>
-                                            <p>
-                                                <b>Author:</b> {blog.organization}<br />
-                                                <b>Date:</b> {blog.publish_date}
-                                            </p>
+
+                                    <article
+                                        key={blog.metadata.slug}
+                                        className="border-b border-slate-200"
+                                    >
+                                        <button
+                                            onClick={() =>
+                                                setActiveBlog(
+                                                    activeBlog === blog.metadata.slug
+                                                        ? null
+                                                        : blog.metadata.slug
+                                                )
+                                            }
+                                            className="w-full flex justify-between items-center py-5 text-slate-800"
+                                            aria-expanded={activeBlog === blog.metadata.slug}
+                                            aria-controls={blog.metadata.slug}
+                                        >
+                                            <span>{blog.title}</span>
+                                            <span className="text-slate-800 transition-transform duration-300">
+                                                <FontAwesomeIcon
+                                                    icon={
+                                                        activeBlog === blog.metadata.slug ? faMinus : faPlus
+                                                    }
+                                                    className="w-4 h-4"
+                                                />
+                                            </span>
                                         </button>
-                                        <div className='panel' style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>
-                                            <p>{blog.content}</p>
-                                            <img src='./uploads2/image.png' height='500' className='center' alt="Blog" />
-                                        </div>
-                                    </div>
+                                        {activeBlog === blog.metadata.slug && (
+                                            <div
+                                                id={blog.metadata.slug}
+                                                className="max-h-96 overflow-hidden transition-all duration-500 ease-in-out"
+                                            >
+                                                <div className="pb-5 text-sm text-slate-500">
+                                                    <div
+                                                        style={{
+                                                            whiteSpace: "pre-wrap",
+                                                            wordWrap: "break-word",
+                                                        }}
+                                                    >
+                                                        {blog.content}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </article>
                                 ))
                             ) : (
                                 <p>No blogs available.</p>
@@ -131,17 +191,51 @@ const Footer: React.FC = () => {
                         <h1 className="text-3xl text-neutral-800 font-titillium font-bold pb-2">KCL Tech Opportunities</h1>
                         {opportunityLoading ? <p>Loading opportunities...</p> : pastOpportunities.length > 0 ? (
                             pastOpportunities.map((opp: IOpportunity) => (
-                                <>
-                                    <button className='accordion'>
-                                        <a href={opp.url} target='_blank' rel='noopener noreferrer'>
-                                            <h2 className="text-lg"><b>{opp.title}</b></h2>
-                                        </a>
-                                        <p>Application Deadline: {opp.date}</p>
+                                <article key={opp._id} className="border-b border-slate-200">
+                                    <button
+                                        onClick={() =>
+                                            setActiveOpportunity(
+                                                activeOpportunity === opp._id ? null : opp._id
+                                            )
+                                        }
+                                        className="w-full flex justify-between items-center py-5 text-slate-800"
+                                        aria-expanded={activeOpportunity === opp._id}
+                                        aria-controls={opp._id}
+                                    >
+                                        <span>{opp.title}</span>
+                                        <span className="text-slate-800 transition-transform duration-300">
+                                            <FontAwesomeIcon
+                                                icon={activeOpportunity === opp._id ? faMinus : faPlus}
+                                                className="w-4 h-4"
+                                            />
+                                        </span>
                                     </button>
-                                    <div className='panel' style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>
-                                        <p>{opp.description}</p>
-                                    </div>
-                                </>
+                                    {activeOpportunity === opp._id && (
+                                        <div
+                                            id={opp._id}
+                                            className="max-h-96 overflow-hidden transition-all duration-500 ease-in-out"
+                                        >
+                                            <div className="pb-5 text-sm text-slate-500">
+                                                {opp.url !== "-" && opp.url !== "" && (
+                                                    <p>
+                                                        Link: <Link href={opp.url} className="text-accent-color-a">{opp.url}</Link>
+                                                    </p>
+                                                )}
+                                                <p>
+                                                    <b>Date:</b> {data.date}
+                                                </p>
+                                                <p>
+                                                    <b>Bring:</b> {data.company}
+                                                </p>
+                                                <div
+                                                    style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}
+                                                >
+                                                    {data.description}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                </article>
                             ))
                         ) : (
                             <p>No blogs available.</p>

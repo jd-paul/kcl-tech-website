@@ -11,6 +11,7 @@ import { useOpportunityContext } from "../context/oppsContext";
 import { IOpportunity } from "../models/Opportunity";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const Page: React.FC = () => {
   const [curOpportunities, setCurOpportunities] = useState<IOpportunity[]>([]);
@@ -90,42 +91,47 @@ const Page: React.FC = () => {
           </div>
 
           {/* Render current opportunities with accordion */}
-          {currentOpportunities.map((data) => (
-            <article key={data._id} className="border-b border-slate-200">
+          {currentOpportunities.map((opp: IOpportunity) => (
+            <article key={opp._id} className="border-b border-slate-200">
               <button
                 onClick={() =>
                   setActiveOpportunity(
-                    activeOpportunity === data._id ? null : data._id
+                    activeOpportunity === opp._id ? null : opp._id
                   )
                 }
                 className="w-full flex justify-between items-center py-5 text-slate-800"
-                aria-expanded={activeOpportunity === data._id}
-                aria-controls={data._id}
+                aria-expanded={activeOpportunity === opp._id}
+                aria-controls={opp._id}
               >
-                <span>{data.title}</span>
+                <span>{opp.title}</span>
                 <span className="text-slate-800 transition-transform duration-300">
                   <FontAwesomeIcon
-                    icon={activeOpportunity === data._id ? faMinus : faPlus}
+                    icon={activeOpportunity === opp._id ? faMinus : faPlus}
                     className="w-4 h-4"
                   />
                 </span>
               </button>
-              {activeOpportunity === data._id && (
+              {activeOpportunity === opp._id && (
                 <div
-                  id={data._id}
+                  id={opp._id}
                   className="max-h-96 overflow-hidden transition-all duration-500 ease-in-out"
                 >
                   <div className="pb-5 text-sm text-slate-500">
+                    {opp.url !== "-" && opp.url !== "" && (
+                      <p>
+                        Link: <Link href={!opp.url.includes("http") ? `https://${opp.url}` : opp.url} className="text-accent-color-a">{!opp.url.includes("http") ? `https://${opp.url}` : opp.url}</Link>
+                      </p>
+                    )}
                     <p>
-                      <b>Date:</b> {data.date}
+                      <b>Date:</b> {opp.date}
                     </p>
                     <p>
-                      <b>Bring:</b> {data.company}
+                      <b>Bring:</b> {opp.company}
                     </p>
                     <div
                       style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}
                     >
-                      {data.description}
+                      {opp.description}
                     </div>
                   </div>
                 </div>

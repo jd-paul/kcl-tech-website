@@ -1,4 +1,5 @@
-import React from "react";
+import Link from "next/link";
+import React, { useEffect } from "react";
 
 interface ButtonProps {
   type?: "white" | "black" | "black2" | "orange" | "blue" | "purple" | "ticket";
@@ -38,28 +39,22 @@ const Button: React.FC<ButtonProps> = ({
       "rounded-full font-exo font-black text-neutral-100 text-md bg-[#159af5] hover:scale-105",
   };
 
-  const buttonClasses = `${baseClasses} ${typeClasses[type]} ${className || ""
-    }`;
+  const buttonClasses = `${baseClasses} ${typeClasses[type]} ${className || ""}`;
 
-  return (
-    <>
-      {onClick ? (
-        <button
-          id={id}
-          className={buttonClasses}
-          style={{ backgroundColor }}
-          onClick={onClick}
-        >
-          {label}
-        </button>
-      ) : (
-        <a href={urlLink} target="_blank" rel="noopener noreferrer">
-          <button id={id} className={buttonClasses} style={{ backgroundColor }}>
-            {label}
-          </button>
-        </a>
-      )}
-    </>
+  return urlLink ? (
+    <Link id={id} href={urlLink} target="_blank" rel="noopener noreferrer" className={buttonClasses} style={{ backgroundColor }}>
+      {label}
+    </Link>
+  ) : (
+
+    <button
+      id={id}
+      className={buttonClasses}
+      style={{ backgroundColor }}
+      onClick={onClick}
+    >
+      {label}
+    </button>
   );
 };
 
