@@ -5,8 +5,10 @@ export interface IEvent extends Document {
   title: string;
   url: string;
   date: string;
-  start_time: string;
-  end_time: string;
+  time: {
+    start: string;
+    end: string;
+  };
   location: string;
   requirements: string;
   description: string;
@@ -17,8 +19,10 @@ const EventSchema: Schema = new Schema({
   title: { type: String, required: true },
   url: { type: String, required: true },
   date: { type: String, required: true },
-  start_time: { type: String, required: true },
-  end_time: { type: String, required: true },
+  time: {
+    start: { type: String, required: true },
+    end: { type: String, required: true },
+  },
   location: { type: String, required: true },
   requirements: { type: String, required: true },
   description: { type: String, required: true },

@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
-    const [pastEvents, setPastEvents] = useState<IEvent[]>([]);
+    const [allEvents, setAllEvents] = useState<IEvent[]>([]);
     const [pastBlogs, setPastBlogs] = useState<IBlog[]>([]);
     const [pastOpportunities, setPastOpportunities] = useState<IOpportunity[]>([]);
 
@@ -27,11 +27,10 @@ const Footer: React.FC = () => {
 
     useEffect(() => {
         if (events) {
-            const pastEvents = events
-                .filter((event: IEvent) => new Date(event.date) < new Date())
+            const allEvents = events
                 .sort((a: IEvent, b: IEvent) => new Date(b.date).getTime() - new Date(a.date).getTime())
-                .slice(0, 3); // Only take the first three events
-            setPastEvents(pastEvents);
+                .slice(0, 3); // Only take the first three past events
+            setAllEvents(allEvents);
         }
 
         if (blogs) {
@@ -76,16 +75,18 @@ const Footer: React.FC = () => {
                     <div style={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
                         <h1 className="text-3xl text-neutral-800 font-titillium font-bold pb-2">Our Events</h1>
                         {eventLoading ? <p>Loading events...</p> :
-                            pastEvents.length > 0 ? (
-                                pastEvents.map((event: IEvent) => (
+                            allEvents.length > 0 ? (
+                                allEvents.map((event: IEvent) => (
                                     <article key={event._id} className="border-b border-slate-200">
                                         <button
                                             onClick={() =>
-                                                setActiveEvent(activeEvent === event._id ? null : event._id)
+                                                setActiveEvent(
+                                                    activeEvent === event._id ? null : event._id
+                                                )
                                             }
                                             className="w-full flex justify-between items-center py-5 text-slate-800"
                                             aria-expanded={activeEvent === event._id}
-                                            aria-controls={event.id}
+                                            aria-controls={event._id}
                                         >
                                             <span>{event.title}</span>
                                             <span className="text-slate-800 transition-transform duration-300">
@@ -102,7 +103,7 @@ const Footer: React.FC = () => {
                                             >
                                                 <div className="pb-5 text-sm text-slate-500">
                                                     <p>
-                                                        <b>Time:</b> {event.start_time} - {event.end_time}
+                                                        <b>Time:</b> {event.time.start} - {event.time.end}
                                                     </p>
                                                     <p>
                                                         <b>Date:</b> {event.date}
@@ -113,14 +114,21 @@ const Footer: React.FC = () => {
                                                     <p>
                                                         <b>Bring:</b> {event.requirements}
                                                     </p>
-                                                    <p>{event.description}</p>
+                                                    <div
+                                                        style={{
+                                                            whiteSpace: "pre-wrap",
+                                                            wordWrap: "break-word",
+                                                        }}
+                                                    >
+                                                        {event.description}
+                                                    </div>
                                                 </div>
                                             </div>
                                         )}
                                     </article>
                                 ))
                             ) : (
-                                <p>No upcoming events.</p>
+                                <p>No events available.</p>
                             )}
                     </div>
 

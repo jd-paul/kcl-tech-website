@@ -86,31 +86,31 @@ const Page: React.FC = () => {
             <p>Loading events...</p>
           ) : futureEvents.length > 0 ? (
             futureEvents.map((event: IEvent) => (
-              <article key={event.id} className="border-b border-slate-200">
+              <article key={event._id} className="border-b border-slate-200">
                 <button
                   onClick={() =>
-                    setActiveEvent(activeEvent === event.id ? null : event.id)
+                    setActiveEvent(activeEvent === event._id ? null : event._id)
                   }
                   className="w-full flex justify-between items-center py-5 text-slate-800"
-                  aria-expanded={activeEvent === event.id}
-                  aria-controls={event.id}
+                  aria-expanded={activeEvent === event._id}
+                  aria-controls={event._id}
                 >
                   <span>{event.title}</span>
                   <span className="text-slate-800 transition-transform duration-300">
                     <FontAwesomeIcon
-                      icon={activeEvent === event.id ? faMinus : faPlus}
+                      icon={activeEvent === event._id ? faMinus : faPlus}
                       className="w-4 h-4"
                     />
                   </span>
                 </button>
-                {activeEvent === event.id && (
+                {activeEvent === event._id && (
                   <div
-                    id={event.id}
+                    id={event._id}
                     className="max-h-96 overflow-hidden transition-all duration-500 ease-in-out"
                   >
                     <div className="pb-5 text-sm text-slate-500">
                       <p>
-                        <b>Time:</b> {event.start_time} - {event.end_time}
+                        <b>Time:</b> {event.time.start} - {event.time.end}
                       </p>
                       <p>
                         <b>Date:</b> {event.date}
@@ -121,7 +121,14 @@ const Page: React.FC = () => {
                       <p>
                         <b>Bring:</b> {event.requirements}
                       </p>
-                      <p>{event.description}</p>
+                      <div
+                        style={{
+                          whiteSpace: "pre-wrap",
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        {event.description}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -164,7 +171,7 @@ const Page: React.FC = () => {
                     >
                       <div className="pb-5 text-sm text-slate-500">
                         <p>
-                          <b>Time:</b> {event.start_time} - {event.end_time}
+                          <b>Time:</b> {event.time.start} - {event.time.end}
                         </p>
                         <p>
                           <b>Date:</b> {event.date}
@@ -194,11 +201,10 @@ const Page: React.FC = () => {
                 <button
                   onClick={handlePreviousPage}
                   disabled={currentPage === 1}
-                  className={`px-4 py-2 bg-gray-200 text-gray-600 rounded ${
-                    currentPage === 1
-                      ? "opacity-50 cursor-not-allowed"
-                      : "hover:bg-gray-300"
-                  }`}
+                  className={`px-4 py-2 bg-gray-200 text-gray-600 rounded ${currentPage === 1
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-gray-300"
+                    }`}
                 >
                   Previous
                 </button>
@@ -208,11 +214,10 @@ const Page: React.FC = () => {
                 <button
                   onClick={handleNextPage}
                   disabled={currentPage === totalPages}
-                  className={`px-4 py-2 bg-gray-200 text-gray-600 rounded ${
-                    currentPage === totalPages
-                      ? "opacity-50 cursor-not-allowed"
-                      : "hover:bg-gray-300"
-                  }`}
+                  className={`px-4 py-2 bg-gray-200 text-gray-600 rounded ${currentPage === totalPages
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-gray-300"
+                    }`}
                 >
                   Next
                 </button>
